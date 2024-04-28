@@ -16,12 +16,12 @@
   $result = mysqli_query($con, $qry);
   $row = mysqli_fetch_assoc($result);
   ?>
-  <form action="update.php" method="post">
+  <form action="updat.php" method="post">
     ID: <input type="text" name="id" value="<?php echo $row['id']; ?>" readonly><br>
-    Title: <input type="text" name="title" value="<?php echo $row['book']; ?>" required><br>
+    Title: <input type="text" name="bookname" value="<?php echo $row['book']; ?>" required><br>
     Author: <input type="text" name="author" value="<?php echo $row['author']; ?>" required><br>
-    Quantity: <input type="number" name="publication_year" value="<?php echo $row['quantity']; ?>" required><br>
-    Price: <input type="number" name="publication_year" value="<?php echo $row['price']; ?>" required><br>
+    Quantity: <input type="number" name="quantity" value="<?php echo $row['quantity']; ?>" required><br>
+    Price: <input type="number" name="price" value="<?php echo $row['price']; ?>" required><br>
 	<button type="submit" name="update">Update Book</button>
   </form>
 </body>

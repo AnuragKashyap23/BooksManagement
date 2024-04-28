@@ -11,7 +11,7 @@ $qry="INSERT INTO store(book, author, price, quantity)
 VALUES ('$bname', '$bauthor', '$bprice', '$bquantity')";
 if (mysqli_query($con,$qry))
 {
-	echo "Data successfully created";
+	header("Location: index.php");
 }
 else
 {
