@@ -21,13 +21,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
+                        <h2 class="pull-left">List of Books</h2>
+                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Book</a>
                     </div>
                     <?php
                     include('connection.php');
 
-                    $qry = "SELECT * FROM employees";
+                    $qry = "SELECT * FROM store";
                     $result = mysqli_query($con, $qry);
 
                     if (mysqli_num_rows($result) > 0) {
@@ -37,8 +37,8 @@
                         echo "<th>#</th>";
                         echo "<th>Book Name</th>";
                         echo "<th>Author</th>";
-                        echo "<th>quantity</th>";
                         echo "<th>Price</th>";
+                        echo "<th>Quantity</th>";
 						echo "<th>Action</th>";
                         echo "</tr>";
                         echo "</thead>";
@@ -47,10 +47,10 @@
                         while ($row = mysqli_fetch_array($result)) {
                             echo "<tr>";
                             echo "<td>" . $row['id'] . "</td>";
-                            echo "<td>" . $row['bookname'] . "</td>";
-                            echo "<td>" . $row['authorname'] . "</td>";
-                            echo "<td>" . $row['quantity'] . "</td>";
+                            echo "<td>" . $row['book'] . "</td>";
+                            echo "<td>" . $row['author'] . "</td>";
                             echo "<td>" . $row['price'] . "</td>";
+                            echo "<td>" . $row['quantity'] . "</td>";
 							echo "<td>";
                             
                             echo '<a href="update.php?id=' . $row['id'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';

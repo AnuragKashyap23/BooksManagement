@@ -11,34 +11,14 @@
 </head>
 <body>
   <h1>Books</h1>
-  <form name="library" action="index.php" method="GET">
+  <form name="library" action="creat.php" method="GET">
 	<h1>fill details: </h1>
-	<input name="bookname" type="text" class="form-control mb-3 mt-4" placeholder="Book Name">
-	<input name="author" type="text" class="form-control " placeholder="Author">
-	<input name="quantity" type="text" class="form-control mb-3 mt-4" placeholder="Genre">
-	<input name="price" type="text" class="form-control " placeholder="Price">
-	<input name="bsave" type="submit">
+	<input name="bookname" type="text" class="form-control mb-3 mt-4" placeholder="Book Name" required>
+	<input name="author" type="text" class="form-control " placeholder="Author" required>
+	<input name="quantity" type="text" class="form-control mb-3 mt-4" placeholder="Price" required>
+	<input name="price" type="text" class="form-control " placeholder="Quantity" required>
+	<button type="submit" name="bsave">Submit</button>
 	</form>
 </body>
 </html>
 	
-<?php
-if(isset($_REQUEST["bsave"]))
-{
-$bname=$_REQUEST["bookname"];
-$bauthor=$_REQUEST["author"];
-$bquantity=$_REQUEST["quantity"];
-$bprice=$_REQUEST["price"];
-}
-include('connection.php');
-$qry="INSERT INTO register(username,password,Mobile,Gender)
-VALUES ('$bname', '$bauthor', '$bquantity', '$bprice')";
-if (mysqli_query($con,$qry))
-{
-	echo "Data successfully created";
-}
-else
-{
-	echo "Error".mysqli_error($con);
-}
-?>
